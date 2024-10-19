@@ -1,3 +1,4 @@
+import { generateRandomEmail } from "cypress/support/utils"
 
 describe('Given the user is in the sign up page', () => {
     beforeEach(() => {
@@ -11,13 +12,14 @@ describe('Given the user is in the sign up page', () => {
         return false
         })
     })
-   
+   /*
     afterEach(function () { 
       if (this.currentTest?.state === 'failed') {
         // Takes a screenshot if the test fails
         cy.screenshot(this.currentTest.title); 
       }
     })
+      */
 
     //inputs the values
     it(' When User inputs all the fields and click on submit then user should successfully sign up', () => {
@@ -26,7 +28,7 @@ describe('Given the user is in the sign up page', () => {
 
       // Click the Sign Up button
       cy.get('#form_signup_createYourAccount').click()
-      cy.wait('@signupRequest').its('response.statusCode').should('eq', 201);
+      cy.wait('@signupRequest').its('response.statusCode').should('eq', 201)
   
       // Assert that the signup is successful
       cy.url().should('include', '/getaquote')
