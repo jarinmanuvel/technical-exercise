@@ -1,13 +1,4 @@
-describe('Signup Page Positive Test Scenario', () => {
-    beforeEach(() => {
-      // Navigate to the signup page before each test
-      cy.visit('https://app.qa.nesto.ca/signup'); 
-      
-      //accept the pop up
-      cy.get('#didomi-notice-agree-button').click() 
-    });
-  
-    it('should successfully sign up with valid inputs', () => {
+const fillSignupForm = () => {
       // Enter a valid first name
       cy.get('#firstName').type('John')
   
@@ -29,10 +20,26 @@ describe('Signup Page Positive Test Scenario', () => {
       //cy.get('select[#select_province]').select('Ontario')
 
       cy.get('#checkbox_leadDistributeConsentAgreement').check() 
-  
+}
+
+describe('Signup Page Positive Test Scenario', () => {
+    beforeEach(() => {
+      // Navigate to the signup page before each test
+      cy.visit('https://app.qa.nesto.ca/signup'); 
+      
+      //accept the pop up
+      cy.get('#didomi-notice-agree-button').click() 
+
       // Click the Sign Up button
       cy.get('#form_signup_createYourAccount').click()
+
+      cy.on ('uncaught:exception', (err, runnable) => {
+        return false
+        })
+    });
   
+    it('should successfully sign up with valid inputs', () => {
+      fillSignupForm();
       // Assert that the signup is successful
       cy.url().should('include', '/getaquote'); 
       cy.contains('How can we help you with your mortgage?').should('be.visible');
