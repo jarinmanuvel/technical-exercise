@@ -15,8 +15,7 @@ describe('Given the user is in the sign up page', () => {
             cy.screenshot(this.currentTest.title); // Take a screenshot if the test fails
         }
     })
-
-
+    
     //Validates the labels
     it('When User Views all the fields Then they should see all required labels correctly displayed', () => {
         cy.validateLabels()

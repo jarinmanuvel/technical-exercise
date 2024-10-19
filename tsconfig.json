@@ -2,14 +2,16 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "ES6",
-    "moduleResolution": "bundler",       // Set module resolution to bundler
-    "noEmit": true,                      // Prevent TypeScript from emitting JS files
-    "allowImportingTsExtensions": true,  // Allow TypeScript extensions in imports
+    "moduleResolution": "bundler", // Set module resolution to bundler
+    "noEmit": true, // Prevent TypeScript from emitting JS files
+    "allowImportingTsExtensions": true, // Allow TypeScript extensions in imports
     "strict": true,
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "cypress/*": ["cypress/*"]
+      "cypress/*": [
+        "cypress/*"
+      ]
     }
   },
   "include": [
