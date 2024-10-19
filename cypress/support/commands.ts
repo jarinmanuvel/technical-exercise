@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
-// *********************************************
+
+import { generateRandomEmail } from '../support/utils';
+
 Cypress.Commands.add('fillSignupForm', () => {
     // Enter a valid first name
     cy.get('#firstName').type('John')
@@ -7,17 +9,19 @@ Cypress.Commands.add('fillSignupForm', () => {
     // Enter a valid last name
     cy.get('#lastName').type('Doe')
 
-    // Enter a valid email address
-    cy.get('#email').type('john.doe@example.com') 
+    //generates random email
+    const randomEmail = generateRandomEmail();
+    // Enters a valid email address
+    cy.get('#email').type(randomEmail) 
 
     // Enter a valid phone number
     cy.get('#phone').type('1234567890') 
 
     // Enter a valid password
-    cy.get('#password').type('Password@123') 
+    cy.get('#password').type('Password@12345678') 
 
     // Confirm the password
-    cy.get('#passwordConfirm').type('Password@123')
+    cy.get('#passwordConfirm').type('Password@12345678')
 
     //cy.get('select[#select_province]').select('Ontario')
 

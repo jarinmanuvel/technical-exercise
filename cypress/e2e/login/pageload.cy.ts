@@ -7,7 +7,8 @@ describe('Given User Navigates to the Login URL When User clicks on Signup Link'
     
     afterEach(function () { 
       if (this.currentTest?.state === 'failed') {
-        cy.screenshot(this.currentTest.title); // Take a screenshot if the test fails
+        // Take a screenshot if the test fails
+        cy.screenshot(this.currentTest.title)
       }
     })
 
@@ -22,7 +23,7 @@ describe('Given User Navigates to the Login URL When User clicks on Signup Link'
     cy.get('#loginPage_signUp').click() 
 
     //assertion to validate the URL
-    cy.url().should('include', '/signup'); 
+    cy.url().should('include', '/signup') 
 
     //assertion to validate the content
     cy.contains('Create a nesto account').should('be.visible')
