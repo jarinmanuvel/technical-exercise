@@ -1,28 +1,5 @@
-const fillSignupForm = () => {
-      // Enter a valid first name
-      cy.get('#firstName').type('John')
-  
-      // Enter a valid last name
-      cy.get('#lastName').type('Doe')
-  
-      // Enter a valid email address
-      cy.get('#email').type('john.doe@example.com') 
-  
-      // Enter a valid phone number
-      cy.get('#phone').type('1234567890') 
-  
-      // Enter a valid password
-      cy.get('#password').type('Password@123') 
-  
-      // Confirm the password
-      cy.get('#passwordConfirm').type('Password@123')
 
-      //cy.get('select[#select_province]').select('Ontario')
-
-      cy.get('#checkbox_leadDistributeConsentAgreement').check() 
-}
-
-describe('Signup Page Positive Test Scenario', () => {
+describe('Given the user is in the sign up page', () => {
     beforeEach(() => {
       // Navigate to the signup page before each test
       cy.visit('https://app.qa.nesto.ca/signup'); 
@@ -38,8 +15,8 @@ describe('Signup Page Positive Test Scenario', () => {
         })
     });
   
-    it('should successfully sign up with valid inputs', () => {
-      fillSignupForm();
+    it(' When User inputs all the fields and click on submit then it should successfully sign up', () => {
+      cy.fillSignupForm();
       // Assert that the signup is successful
       cy.url().should('include', '/getaquote'); 
       cy.contains('How can we help you with your mortgage?').should('be.visible');
