@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-
 import { generateRandomEmail } from '../support/utils';
 
 Cypress.Commands.add('fillSignupForm', () => {

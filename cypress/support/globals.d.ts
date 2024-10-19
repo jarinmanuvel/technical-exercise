@@ -1,5 +1,3 @@
-// cypress/support/globals.d.ts
-
 declare global {
     namespace Cypress {
       interface Chainable {
