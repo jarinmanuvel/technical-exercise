@@ -2,7 +2,9 @@ describe('Signup Page Positive Test Scenario', () => {
     beforeEach(() => {
       // Navigate to the signup page before each test
       cy.visit('https://app.qa.nesto.ca/signup'); 
-      cy.get('#didomi-notice-agree-button').click()
+      
+      //accept the pop up
+      cy.get('#didomi-notice-agree-button').click() 
     });
   
     it('should successfully sign up with valid inputs', () => {
