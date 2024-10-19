@@ -1,11 +1,17 @@
-describe('page load validation', () => {
+describe('Given User Navigates to the Login URL When User clicks on Signup Link', () => {
   beforeEach(() => {
     cy.on ('uncaught:exception', (err, runnable) => {
     return false
     })
     })
+    
+    afterEach(function () { 
+      if (this.currentTest?.state === 'failed') {
+        cy.screenshot(this.currentTest.title); // Take a screenshot if the test fails
+      }
+    })
 
-  it('passes', () => {
+  it('Then User must be navigated to the Signup Page', () => {
     //navigates to the login page
     cy.visit('https://app.qa.nesto.ca/login')
 
@@ -17,5 +23,9 @@ describe('page load validation', () => {
 
     //assertion to validate the URL
     cy.url().should('include', '/signup'); 
+
+    //assertion to validate the content
+    cy.contains('Create a nesto account').should('be.visible')
+
   })
 })
