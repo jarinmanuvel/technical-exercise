@@ -1,7 +1,5 @@
 import { generateRandomEmail } from "cypress/support/utils"
 import { randomEmail } from 'cypress/support/commands';
-
-
 describe('Given the user is in the sign up page', () => {
   beforeEach(() => {
     // Navigate to the login page before each test
