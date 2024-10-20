@@ -1,4 +1,4 @@
-describe('Given User Navigates to the Login URL When User clicks on Signup Link', () => {
+describe('Given User Navigates to the Login URL', () => {
   context('When User clicks on Signup Link', () => {
     beforeEach(() => {
       cy.on('uncaught:exception', (err, runnable) => {
