@@ -1,4 +1,6 @@
 import { generateRandomEmail } from "cypress/support/utils"
+import { randomEmail } from 'cypress/support/commands';
+
 
 describe('Given the user is in the sign up page', () => {
   beforeEach(() => {
@@ -27,7 +29,20 @@ describe('Given the user is in the sign up page', () => {
 
     // Click the Sign Up button
     cy.get('#form_signup_createYourAccount').click()
-    cy.wait('@signupRequest').its('response.statusCode').should('eq', 201)
+    cy.wait('@signupRequest').then((interception) => {
+      // Ensure the API call was made
+      expect(interception).to.exist;
+
+      // Validate the status code
+      expect(interception.response?.statusCode).to.eq(201);
+
+      // Validate the response body contains the form data
+      expect(interception.response?.body).to.have.nested.property('account.firstName', 'John');
+      expect(interception.response?.body).to.have.nested.property('account.lastName', 'Doe');
+      expect(interception.response?.body).to.have.nested.property('account.region', 'ON');
+      expect(interception.response?.body).to.have.nested.property('account.phone', '123-456-7890');
+      expect(interception.response?.body.account.email).to.eq(randomEmail);
+    });
 
     // Assert that the signup is successful
     cy.url().should('include', '/getaquote')

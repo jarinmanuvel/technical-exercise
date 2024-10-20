@@ -1,6 +1,9 @@
 /// <reference types="cypress" />
 import { generateRandomEmail } from '../support/utils';
 
+//generates random email and export it
+export const randomEmail = generateRandomEmail();
+
 Cypress.Commands.add('fillSignupForm', () => {
     // Enter a valid first name
     cy.get('#firstName').type('John')
@@ -8,8 +11,6 @@ Cypress.Commands.add('fillSignupForm', () => {
     // Enter a valid last name
     cy.get('#lastName').type('Doe')
 
-    //generates random email
-    const randomEmail = generateRandomEmail();
     // Enters a valid email address
     cy.get('#email').type(randomEmail)
 
@@ -28,6 +29,7 @@ Cypress.Commands.add('fillSignupForm', () => {
 
     //click on checkbox
     cy.get('#checkbox_leadDistributeConsentAgreement').check()
+
 })
 
 
@@ -62,3 +64,4 @@ Cypress.Commands.add('validateLabels', () => {
     cy.get('[data-test-id="select_label-province"]').should('contain.text', 'Province')
 
 })
+
