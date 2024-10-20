@@ -35,6 +35,7 @@ Cypress.Commands.add('fillSignupForm', () => {
 
 Cypress.Commands.add('validateLabels', () => {
 
+    cy.wait(1000)
     // First Name Label Check 
     cy.get('[data-test-id="input_label-firstName"]').should('exist')
     cy.get('[data-test-id="input_label-firstName"]').should('contain.text', 'First name')
@@ -67,6 +68,7 @@ Cypress.Commands.add('validateLabels', () => {
 
 Cypress.Commands.add('validateMandatoryFieldErrors', () => {
     // Check that each mandatory field shows an error state using the data-test-id attribute
+    cy.wait(1000)
     cy.get('[data-test-id="form-error-firstName"]').should('exist')
     cy.get('[data-test-id="form-error-lastName"]').should('exist')
     cy.get('[data-test-id="form-error-email"]').should('exist')
