@@ -7,6 +7,7 @@
     "allowImportingTsExtensions": true, // Allow TypeScript extensions in imports
     "strict": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "cypress/*": [
