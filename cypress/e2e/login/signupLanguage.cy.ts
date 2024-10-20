@@ -13,16 +13,16 @@ describe('Given User is in the signup page', () => {
                 })
 
                 // Toggle the language
-                cy.get('[data-test-id="toggle-language"]').click() // Click the toggle button
+                cy.get('[data-test-id="toggle-language"]').click() // Clicks the toggle button
 
                 // If the first click sets it to French, we toggle it again for English
                 if (language === 'English') {
-                    cy.get('[data-test-id="toggle-language"]').click() // Click again to switch to French
+                    cy.get('[data-test-id="toggle-language"]').click() // Clicks again to switch to French
                 }
             })
 
             it('should display the correct labels', () => {
-                // Assert that the labels are correct based on the selected language
+                // Asserts that the labels are correct based on the selected language
                 if (language === 'French') {
                     cy.get('[data-test-id="input_label-firstName"]').should('contain', 'Prénom')
                 } else {
@@ -41,7 +41,7 @@ describe('Given User is in the signup page', () => {
                 // Click the Sign Up button
                 cy.get('#form_signup_createYourAccount').click()
 
-                // Assert that the correct error message is displayed
+                // Assert that the correct error message is displayed in the corresponding language
                 if (language === 'French') {
                     cy.get('[data-test-id="validation_errors_invalidEmail"]').should('contain', 'Courriel invalide')
                 } else {
