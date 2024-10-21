@@ -47,7 +47,6 @@ describe('Given the user is in the sign up page', () => {
 
         it('Then they should see red border errors for empty mandatory fields when submitting', () => {
             // Click the submit button without filling any fields
-            cy.wait(1000)
             cy.get('#form_signup_createYourAccount').should('be.visible').click();
             // Call the custom command to validate error states
             cy.validateMandatoryFieldErrors()

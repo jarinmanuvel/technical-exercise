@@ -63,6 +63,14 @@ describe('Given User Navigates to the Login URL', () => {
       cy.on('uncaught:exception', (err, runnable) => {
         return false;
       });
+            // Clicking to accept the pop-up window
+            cy.get('body').then(($body) => {
+              if ($body.find('#didomi-notice-agree-button').length > 0) {
+                cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });
+              } else {
+                cy.log('Consent button not found; proceeding without it.');
+              }
+            });
     });
 
     it('Then User must be navigated to the Signup Page', () => {
@@ -79,9 +87,10 @@ describe('Given User Navigates to the Login URL', () => {
       cy.get('#loginPage_signUp').click();
       cy.url().should('include', '/signup');
       cy.contains('Create a nesto account').should('be.visible');
-
+      cy.validateLabels();
       // Validate the login link presence on the signup page
       cy.get('#createAccountPage_login').should('be.visible').click();
+
       cy.url().should('include', '/login');
       // Navigate back to the signup page again
       cy.get('#loginPage_signUp').click();

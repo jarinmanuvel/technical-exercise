@@ -44,6 +44,19 @@ Cypress.Commands.add('validateLabels', () => {
     cy.get('[data-test-id="select_label-province"]').should('be.visible').and('contain.text', 'Province');
 });
 
+
+Cypress.Commands.add('validateLabelsFr', () => {
+    // Wait for the elements to be visible and contain the expected text dynamically
+    cy.get('[data-test-id="input_label-firstName"]').should('be.visible').and('contain.text', 'Prénom');
+    cy.get('[data-test-id="input_label-lastName"]').should('be.visible').and('contain.text', 'Nom de famille');
+    cy.get('[data-test-id="input_label-email"]').should('be.visible').and('contain.text', 'Courriel');
+    cy.get('[data-test-id="input_label-phone"]').should('be.visible').and('contain.text', 'Numéro de cellulaire');
+    cy.get('[data-test-id="input_label-password"]').should('be.visible').and('contain.text', 'Mot de passe');
+    cy.get('[data-test-id="input_label-passwordConfirm"]').should('be.visible').and('contain.text', 'Confirmez votre mot de passe');
+    cy.get('[data-test-id="select_label-province"]').should('be.visible').and('contain.text', 'Province');
+});
+
+
 Cypress.Commands.add('validateMandatoryFieldErrors', () => {
     // Check that each mandatory field shows an error state using the data-test-id attribute
     cy.get('[data-test-id="form-error-firstName"]').should('be.visible');

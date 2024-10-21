@@ -59,8 +59,10 @@ describe('Given User is in the signup page', () => {
                 cy.wait(1000)
                 if (language === 'French') {
                     cy.get('[data-test-id="input_label-firstName"]').should('contain', 'Prénom')
+                    cy.validateLabelsFr();
                 } else {
                     cy.get('[data-test-id="input_label-firstName"]').should('contain', 'First name')
+                    cy.validateLabels();
                 }
             })
 
