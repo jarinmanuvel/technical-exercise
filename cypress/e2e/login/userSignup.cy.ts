@@ -8,13 +8,7 @@ describe('Given the user is on the sign-up page', () => {
       cy.visit('https://app.qa.nesto.ca/signup')
       cy.get('#didomi-notice-agree-button').should('be.visible')
       // Clicking to accept the pop-up window
-      cy.get('body').then(($body) => {
-        if ($body.find('#didomi-notice-agree-button').length > 0) {
-          cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });
-        } else {
-          cy.log('Consent button not found; proceeding without it.');
-        }
-      });
+      cy.acceptConsent()
       cy.on('uncaught:exception', (err, runnable) => {
         return false
       })
@@ -24,7 +18,7 @@ describe('Given the user is on the sign-up page', () => {
       if (this.currentTest?.state === 'failed') {
         // Get the current date and time for the timestamp
         const now = new Date()
-        const timestamp = now.toISOString().replace(/:/g, '-').slice(0, 19) // Format: YYYY-MM-DDTHH-MM-SS
+        const timestamp = now.toISOString().replace(/:/g, '-').slice(0, 19)
 
         const testDetails = {
           title: this.currentTest.title,
@@ -51,7 +45,7 @@ describe('Given the user is on the sign-up page', () => {
       cy.intercept('POST', 'https://app.qa.nesto.ca/api/accounts').as('signupRequest')
 
       // Fill in the sign-up form
-      cy.fillSignupForm();
+      cy.fillSignupForm()
 
       // Click the Sign Up button
       cy.get('#form_signup_createYourAccount').click()
@@ -70,10 +64,10 @@ describe('Given the user is on the sign-up page', () => {
         expect(interception.response?.body).to.have.nested.property('account.region', 'ON')
         expect(interception.response?.body).to.have.nested.property('account.phone', '123-456-7890')
         expect(interception.response?.body.account.email).to.eq(randomEmail)
-      });
+      })
 
       // Assert that the sign-up is successful
       cy.url().should('include', '/getaquote')
-    });
-  });
-});
+    })
+  })
+})

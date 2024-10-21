@@ -6,13 +6,7 @@ describe('Given the user is in the sign up page', () => {
 
             cy.get('#didomi-notice-agree-button').should('be.visible')
             // Clicking to accept the pop-up window
-            cy.get('body').then(($body) => {
-                if ($body.find('#didomi-notice-agree-button').length > 0) {
-                    cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });
-                } else {
-                    cy.log('Consent button not found; proceeding without it.');
-                }
-            });
+            cy.acceptConsent()
             //for uncaught exception errors
             cy.on('uncaught:exception', (err, runnable) => {
                 return false
@@ -30,7 +24,7 @@ describe('Given the user is in the sign up page', () => {
                     state: this.currentTest.state,
                     errorMessage: this.currentTest.err?.message || 'No error message available',
                     url: cy.url().then((currentUrl) => currentUrl),
-                };
+                }
 
                 // Generate the filename with the timestamp
                 const filename = `${this.currentTest.title.replace(/ /g, '_')}_failure_details_${timestamp}.txt`
@@ -47,7 +41,7 @@ describe('Given the user is in the sign up page', () => {
 
         it('Then they should see red border errors for empty mandatory fields when submitting', () => {
             // Click the submit button without filling any fields
-            cy.get('#form_signup_createYourAccount').should('be.visible').click();
+            cy.get('#form_signup_createYourAccount').should('be.visible').click()
             // Call the custom command to validate error states
             cy.validateMandatoryFieldErrors()
             // Call the custom command to validate the "Required" messages

@@ -5,14 +5,8 @@ describe('Given the user is in the sign up page', () => {
             cy.visit('https://app.qa.nesto.ca/signup')
             cy.get('#didomi-notice-agree-button').should('be.visible')
             // Clicking to accept the pop-up window
-            cy.get('body').then(($body) => {
-                if ($body.find('#didomi-notice-agree-button').length > 0) {
-                    cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });
-                } else {
-                    cy.log('Consent button not found; proceeding without it.');
-                }
-            });
-            cy.toggleLanguageToFrench();
+            cy.acceptConsent()
+            cy.toggleLanguageToFrench()
             //for uncaught exception errors
             cy.on('uncaught:exception', (err, runnable) => {
                 return false
@@ -22,7 +16,7 @@ describe('Given the user is in the sign up page', () => {
             if (this.currentTest?.state === 'failed') {
                 // Get the current date and time for the timestamp
                 const now = new Date()
-                const timestamp = now.toISOString().replace(/:/g, '-').slice(0, 19) // Format: YYYY-MM-DDTHH-MM-SS
+                const timestamp = now.toISOString().replace(/:/g, '-').slice(0, 19)
 
                 const testDetails = {
                     title: this.currentTest.title,
@@ -30,7 +24,7 @@ describe('Given the user is in the sign up page', () => {
                     state: this.currentTest.state,
                     errorMessage: this.currentTest.err?.message || 'No error message available',
                     url: cy.url().then((currentUrl) => currentUrl),
-                };
+                }
 
                 // Generate the filename with the timestamp
                 const filename = `${this.currentTest.title.replace(/ /g, '_')}_failure_details_${timestamp}.txt`

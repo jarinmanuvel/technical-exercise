@@ -8,6 +8,7 @@ declare global {
       validateRequiredFieldMessages(): Chainable<void>
       toggleLanguageToFrench():Chainable<void>
       toggleLanguageToEnglish():Chainable<void>
+      acceptConsent():Chainable<void>
     }
   }
 }

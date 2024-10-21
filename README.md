@@ -53,7 +53,7 @@ I have updated `package.json` file with the commands to run the scripts, you can
    - Verifies validation messages and label visibility for the English signup page.
 
 ### Invalid Email Entry Validation for English Language
-   - Validates the error messages when an invalid email is entered in the English version.(negative scenario)
+   - Validates the error messages when an invalid email is entered in the English version.(Negative scenario)
 
 ### Label Validation Tests for English Language
    - Validates the labels in English language. 
@@ -62,7 +62,7 @@ I have updated `package.json` file with the commands to run the scripts, you can
    - Ensures that all elements load correctly when the English login page is accessed.
 
 ### Successful User Signup for English Language
-   - Tests successful signup process when the user is in the English Sign up page. (positive scenario)
+   - Tests successful signup process when the user is in the English Sign up page. (Positive scenario)
 
 ## Prerequisites
 - Node.js (>= 14.x.x)
