@@ -6,14 +6,14 @@ This repository contains a Cypress test suite for testing the signup functionali
 - [Overview](#overview)
 - [Test Files](#test-files)
   - [Field Validation Tests for French Language](#field-validation-tests-for-french-language)
-  - [Page Load Tests for French Language](#page-load-tests-for-french-language)
-  - [User Signup Tests for French Language](#user-signup-tests-for-french-language)
   - [Invalid Email Entry Validation for French Language](#invalid-email-entry-validation-for-french-language)
+  - [Label Validation Tests for French Language](#label-validation-tests-for-french-language)
+  - [Page Load Tests for French Language](#page-load-tests-for-french-language)
   - [Successful User Signup for French Language](#successful-user-signup-for-french-language)
   - [Field Validation Tests for English Language](#field-validation-tests-for-english-language)
-  - [Page Load Tests for English Language](#page-load-tests-for-english-language)
-  - [User Signup Tests for English Language](#user-signup-tests-for-english-language)
   - [Invalid Email Entry Validation for English Language](#invalid-email-entry-validation-for-english-language)
+  - [Label Validation Tests for English Language](#label-validation-tests-for-english-language)
+  - [Page Load Tests for English Language](#page-load-tests-for-english-language)
   - [Successful User Signup for English Language](#successful-user-signup-for-english-language)
 - [Prerequisites](#prerequisites)
 - [Dependencies](#dependencies)
@@ -29,32 +29,32 @@ The test suite validates different aspects of the signup process, including lang
 ### Field Validation Tests for French Language
    - Verifies validation messages and label visibility for the French signup page.
 
+### Invalid Email Entry Validation for French Language
+   - Validates the error messages when an invalid email is entered in the French version.(negative scenario)
+
+### Label Validation Tests for French Language
+   - Validates the labels in french language. 
+
 ### Page Load Tests for French Language
    - Ensures that all elements load correctly when the French login page is accessed.
 
-### User Signup Tests for French Language
-   - Tests the complete signup process with valid input data for French.
-
-### Invalid Email Entry Validation for French Language
-   - Validates the error messages when an invalid email is entered in the French version.
-
 ### Successful User Signup for French Language
-   - Tests successful signup scenarios using French language settings.
+   - Tests successful signup process using French language settings. (positive scenario)
 
 ### Field Validation Tests for English Language
    - Verifies validation messages and label visibility for the English signup page.
 
+### Invalid Email Entry Validation for English Language
+   - Validates the error messages when an invalid email is entered in the English version.(negative scenario)
+
+### Label Validation Tests for English Language
+   - Validates the labels in English language. 
+
 ### Page Load Tests for English Language
    - Ensures that all elements load correctly when the English login page is accessed.
 
-### User Signup Tests for English Language
-   - Tests the complete signup process with valid input data for English.
-
-### Invalid Email Entry Validation for English Language
-   - Validates the error messages when an invalid email is entered in the English version.
-
 ### Successful User Signup for English Language
-   - Tests successful signup scenarios using English language settings.
+   - Tests successful signup process using English language settings. (positive scenario)
 
 ## Prerequisites
 - Node.js (>= 14.x.x)
