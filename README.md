@@ -19,7 +19,8 @@ This repository contains a Cypress test suite for testing the signup functionali
 - [Dependencies](#dependencies)
 - [Setup and Installation](#setup-and-installation)
 - [Running The Tests](#running-the-tests)
-- [Viewing the Execution Report](viewing-execution-report)
+- [Viewing the Execution Report](viewing-the-execution-report)
+- [Bugs Found While Testing](bugs-found-while-testing)
 
 ## Overview
 The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages to ensure the application's behavior meets expected conditions.
@@ -125,5 +126,5 @@ Sample Machawesome Report
 
 ![Sample Mochawesome report](cypress/sample%20docs/mochawesomesample.png)
 
-## Bugs found while testing
+## Bugs Found While Testing
 [View the PDF](./cypress/sample%20docs/Bugs%20From%20Technical%20Exercise%20-%20Nesto.pdf)
