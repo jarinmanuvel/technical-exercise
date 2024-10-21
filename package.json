@@ -10,7 +10,7 @@
   "scripts": {
     "cy:open": "cypress open",
     "report": "npx cypress run --reporter cypress-mochawesome-reporter",
-    "report-en": "npx cypress run --reporter cypress-mochawesome-reporter --spec 'cypress/e2e/languages/*'",
+    "report-en": "npx cypress run --reporter cypress-mochawesome-reporter --spec 'cypress/e2e/login/*'",
     "report-fr": "npx cypress run --reporter cypress-mochawesome-reporter --spec 'cypress/e2e/languages/*'"
   },
   "name": "technical-exercise",
