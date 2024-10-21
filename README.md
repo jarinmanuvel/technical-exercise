@@ -106,7 +106,7 @@ Additional dependencies are listed in the `package.json` file.
   npm run cy:open
 
 ## Viewing the Execution Report
-Execution report is automatically generated using Mochawesome. You can find the report generated in the [reports](./cypress/reports) directory after executing them headless. 
+Execution report is automatically generated using Mochawesome. You can find the report generated in the "/cypress/reports" directory after executing them headless. 
 
 You can find a sample execution report under [sample docs](./cypress/sample%20docs) folder called mochaawesomereportsample.html, to view this sample make sure to download the html file along with the [assets](./cypress/sample%20docs/assets) folder from the [sample docs](./cypress/sample%20docs) folder and open the html file in your local browser. 
 
