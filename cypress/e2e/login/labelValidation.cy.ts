@@ -3,7 +3,6 @@ describe('Given the user is in the sign up page', () => {
         beforeEach(() => {
             // Navigate to the login page before each test
             cy.visit('https://app.qa.nesto.ca/signup')
-
             cy.get('#didomi-notice-agree-button').should('be.visible')
             // Clicking to accept the pop-up window
             cy.get('body').then(($body) => {
@@ -44,16 +43,12 @@ describe('Given the user is in the sign up page', () => {
             }
         })
 
-
-        it('Then they should see red border errors for empty mandatory fields when submitting', () => {
-            // Click the submit button without filling any fields
-            cy.wait(1000)
-            cy.get('#form_signup_createYourAccount').should('be.visible').click();
-            // Call the custom command to validate error states
-            cy.validateMandatoryFieldErrors()
-            // Call the custom command to validate the "Required" messages
-            cy.validateRequiredFieldMessages()
+        //Validates the labels
+        it('Then they should see all required labels correctly displayed', () => {
+            cy.validateLabels()
+            cy.contains('Create a nesto account').should('be.visible')
 
         })
+
     })
 })

@@ -5,10 +5,13 @@ describe('Given User is in the signup page', () => {
         context(`When the user selects the language as ${language}`, () => {
             beforeEach(() => {
                 cy.visit('https://app.qa.nesto.ca/signup')
-                //accepts the pop up
+                // Clicking to accept the pop-up window
+                cy.get('#didomi-notice-agree-button').should('be.visible')
                 cy.get('body').then(($body) => {
                     if ($body.find('#didomi-notice-agree-button').length > 0) {
-                        cy.get('#didomi-notice-agree-button').click();
+                        cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });
+                    } else {
+                        cy.log('Consent button not found; proceeding without it.');
                     }
                 });
 
@@ -17,11 +20,11 @@ describe('Given User is in the signup page', () => {
                 })
 
                 // Toggle the language
-                cy.get('[data-test-id="toggle-language"]').click() // Clicks the toggle button
+                cy.get('[data-test-id="toggle-language"]').should('be.visible').click(); // Waits until visible, then clicks the toggle button
 
                 // If the first click sets it to French, we toggle it again for English
                 if (language === 'English') {
-                    cy.get('[data-test-id="toggle-language"]').click() // Clicks again to switch to French
+                    cy.get('[data-test-id="toggle-language"]').should('be.visible').click();// Clicks again to switch to French
                 }
             })
 

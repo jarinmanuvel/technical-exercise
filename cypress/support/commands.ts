@@ -6,75 +6,52 @@ export const randomEmail = generateRandomEmail();
 
 Cypress.Commands.add('fillSignupForm', () => {
     // Enter a valid first name
-    cy.get('#firstName').type('John')
+    cy.get('#firstName').type('John', { delay: 200 });
 
     // Enter a valid last name
-    cy.get('#lastName').type('Doe')
+    cy.get('#lastName').type('Doe', { delay: 200 });
 
-    // Enters a valid email address
-    cy.get('#email').type(randomEmail)
+    // Enter a valid email address
+    cy.get('#email').type(randomEmail, { delay: 200 });
 
     // Enter a valid phone number
-    cy.get('#phone').type('1234567890')
+    cy.get('#phone').type('1234567890', { delay: 200 });
 
     // Enter a valid password
-    cy.get('#password').type('Password@12345678')
+    cy.get('#password').type('Password@12345678', { delay: 200 });
 
     // Confirm the password
-    cy.get('#passwordConfirm').type('Password@12345678')
+    cy.get('#passwordConfirm').type('Password@12345678', { delay: 200 });
 
-    //Selecting the Province to Ontario from the drop down
-    cy.get('#select_province').click()
-    cy.get('.react-select__menu.css-18td19-menu').should('be.visible').contains('Ontario').click()
+    // Selecting the Province to Ontario from the dropdown
+    cy.get('#select_province').click();
+    cy.get('.react-select__menu.css-18td19-menu').should('be.visible').contains('Ontario').click();
 
-    //click on checkbox
-    cy.get('#checkbox_leadDistributeConsentAgreement').check()
+    // Click on the checkbox
+    cy.get('#checkbox_leadDistributeConsentAgreement').check();
+});
 
-})
 
 
 Cypress.Commands.add('validateLabels', () => {
-
-    cy.wait(1000)
-    // First Name Label Check 
-    cy.get('[data-test-id="input_label-firstName"]').should('exist')
-    cy.get('[data-test-id="input_label-firstName"]').should('contain.text', 'First name')
-
-    // Last Name Label Check
-    cy.get('[data-test-id="input_label-lastName"]').should('exist')
-    cy.get('[data-test-id="input_label-lastName"]').should('contain.text', 'Last name')
-    
-    // Email Label Check
-    cy.get('[data-test-id="input_label-email"]').should('exist')
-    cy.get('[data-test-id="input_label-email"]').should('contain.text', 'Email')
-
-    // Mobile Phone Number Label Check
-    cy.get('[data-test-id="input_label-phone"]').should('exist')
-    cy.get('[data-test-id="input_label-phone"]').should('contain.text', 'Mobile phone number')
-
-    // Password Label Check
-    cy.get('[data-test-id="input_label-password"]').should('exist')
-    cy.get('[data-test-id="input_label-password"]').should('contain.text', 'Password')
-
-    // Confirm Password Label Check
-    cy.get('[data-test-id="input_label-passwordConfirm"]').should('exist')
-    cy.get('[data-test-id="input_label-passwordConfirm"]').should('contain.text', 'Confirm password')
-
-    // Province Label Check
-    cy.get('[data-test-id="select_label-province"]').should('exist')
-    cy.get('[data-test-id="select_label-province"]').should('contain.text', 'Province')
-
-})
+    // Wait for the elements to be visible and contain the expected text dynamically
+    cy.get('[data-test-id="input_label-firstName"]').should('be.visible').and('contain.text', 'First name');
+    cy.get('[data-test-id="input_label-lastName"]').should('be.visible').and('contain.text', 'Last name');
+    cy.get('[data-test-id="input_label-email"]').should('be.visible').and('contain.text', 'Email');
+    cy.get('[data-test-id="input_label-phone"]').should('be.visible').and('contain.text', 'Mobile phone number');
+    cy.get('[data-test-id="input_label-password"]').should('be.visible').and('contain.text', 'Password');
+    cy.get('[data-test-id="input_label-passwordConfirm"]').should('be.visible').and('contain.text', 'Confirm password');
+    cy.get('[data-test-id="select_label-province"]').should('be.visible').and('contain.text', 'Province');
+});
 
 Cypress.Commands.add('validateMandatoryFieldErrors', () => {
     // Check that each mandatory field shows an error state using the data-test-id attribute
-    cy.wait(1000)
-    cy.get('[data-test-id="form-error-firstName"]').should('exist')
-    cy.get('[data-test-id="form-error-lastName"]').should('exist')
-    cy.get('[data-test-id="form-error-email"]').should('exist')
-    cy.get('[data-test-id="form-error-phone"]').should('exist')
-    cy.get('[data-test-id="form-error-password"]').should('exist')
-    cy.get('[data-test-id="form-error-passwordConfirm"]').should('exist')
+    cy.get('[data-test-id="form-error-firstName"]').should('be.visible');
+    cy.get('[data-test-id="form-error-lastName"]').should('be.visible');
+    cy.get('[data-test-id="form-error-email"]').should('be.visible');
+    cy.get('[data-test-id="form-error-phone"]').should('be.visible');
+    cy.get('[data-test-id="form-error-password"]').should('be.visible');
+    cy.get('[data-test-id="form-error-passwordConfirm"]').should('be.visible');
 });
 
 Cypress.Commands.add('validateRequiredFieldMessages', () => {

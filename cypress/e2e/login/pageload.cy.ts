@@ -6,12 +6,13 @@ describe('Given User Navigates to the Login URL', () => {
       });
       // Navigate to the login page before each test
       cy.visit('https://app.qa.nesto.ca/login');
+      cy.get('#didomi-notice-agree-button').should('be.visible')
       // Clicking to accept the pop-up window
       cy.get('body').then(($body) => {
         if ($body.find('#didomi-notice-agree-button').length > 0) {
           cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });
         } else {
-          cy.log('Didomi consent button not found; proceeding without it.');
+          cy.log('Consent button not found; proceeding without it.');
         }
       });
     });

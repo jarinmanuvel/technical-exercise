@@ -6,15 +6,15 @@ describe('Given the user is on the sign-up page', () => {
     beforeEach(() => {
       // Navigate to the sign-up page before each test
       cy.visit('https://app.qa.nesto.ca/signup')
-
-      // Accept the pop-up
-      // cy.get('#didomi-notice-agree-button').click();
+      cy.get('#didomi-notice-agree-button').should('be.visible')
+      // Clicking to accept the pop-up window
       cy.get('body').then(($body) => {
         if ($body.find('#didomi-notice-agree-button').length > 0) {
-          cy.get('#didomi-notice-agree-button').click();
+          cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });
+        } else {
+          cy.log('Consent button not found; proceeding without it.');
         }
-      })
-
+      });
       cy.on('uncaught:exception', (err, runnable) => {
         return false
       })
