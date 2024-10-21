@@ -1,6 +1,6 @@
 # Technical Exercise - Cypress Test Suite
 
-This repository contains a Cypress test suite for testing the signup functionality of the [Nesto application](https://app.qa.nesto.ca/login). The project is using cypress framework and the tests are written in typescript
+This repository contains a test suite for testing the signup functionality of the [Nesto application](https://app.qa.nesto.ca/login). The project is using cypress framework and the tests are written in typescript.
 
 ## Table of Contents
 - [Overview](#overview)
