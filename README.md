@@ -19,6 +19,7 @@ This repository contains a Cypress test suite for testing the signup functionali
 - [Dependencies](#dependencies)
 - [Setup and Installation](#setup-and-installation)
 - [Running Tests](#running-tests)
+- [Viewing the Execution Report](viewing-execution-report)
 
 ## Overview
 The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages to ensure the application's behavior meets expected conditions.
@@ -97,3 +98,6 @@ Additional dependencies are listed in the `package.json` file.
 - For executing all the Tests in the Cypress App
   ```bash
   npm run cy:open
+
+## Viewing the Execution Report
+Execution report is generated using Mochawesome. You can find the report generated in the cypress/reports directory after executing them headless
