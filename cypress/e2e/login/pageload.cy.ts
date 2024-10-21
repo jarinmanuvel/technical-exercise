@@ -75,7 +75,7 @@ describe('Given User Navigates to the Login URL', () => {
 
     it('Then User must be navigated to the Signup Page', () => {
       cy.visit('https://app.qa.nesto.ca/login');
-
+      cy.get('#didomi-notice-agree-button').should('be.visible')
       cy.get('body').then(($body) => {
         if ($body.find('#didomi-notice-agree-button').length > 0) {
           cy.get('#didomi-notice-agree-button').should('be.visible').click({ force: true });

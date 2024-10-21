@@ -6,22 +6,22 @@ export const randomEmail = generateRandomEmail();
 
 Cypress.Commands.add('fillSignupForm', () => {
     // Enter a valid first name
-    cy.get('#firstName').type('John', { delay: 200 });
+    cy.get('#firstName').type('John', { delay: 100 });
 
     // Enter a valid last name
-    cy.get('#lastName').type('Doe', { delay: 200 });
+    cy.get('#lastName').type('Doe', { delay: 100 });
 
     // Enter a valid email address
-    cy.get('#email').type(randomEmail, { delay: 200 });
+    cy.get('#email').type(randomEmail, { delay: 100 });
 
     // Enter a valid phone number
-    cy.get('#phone').type('1234567890', { delay: 200 });
+    cy.get('#phone').type('1234567890', { delay: 100 });
 
     // Enter a valid password
-    cy.get('#password').type('Password@12345678', { delay: 200 });
+    cy.get('#password').type('Password@12345678', { delay: 100 });
 
     // Confirm the password
-    cy.get('#passwordConfirm').type('Password@12345678', { delay: 200 });
+    cy.get('#passwordConfirm').type('Password@12345678', { delay: 100 });
 
     // Selecting the Province to Ontario from the dropdown
     cy.get('#select_province').click();

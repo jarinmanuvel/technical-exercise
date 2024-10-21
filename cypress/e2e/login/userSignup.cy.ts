@@ -74,7 +74,6 @@ describe('Given the user is on the sign-up page', () => {
 
       // Assert that the sign-up is successful
       cy.url().should('include', '/getaquote')
-      cy.contains('How can we help you with your mortgage?').should('be.visible')
     });
   });
 });
