@@ -126,4 +126,4 @@ Sample Machawesome Report
 ![Sample Mochawesome report](cypress/sample%20docs/mochawesomesample.png)
 
 ## Bugs Found While Testing
-[View the PDF](.cypress/sample%20docs/Bugs%20-%20Nesto%20QA%20Website.pdf)
+[View the PDF](.cypress/sample%20docs/Bugs.pdf)
