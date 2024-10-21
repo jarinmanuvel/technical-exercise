@@ -75,8 +75,21 @@ Additional dependencies are listed in the `package.json` file.
    ```bash
    git clone https://github.com/jarinmanuvel/technical-exercise.git
 2. Navigate to the project directory
-  ```bash
-  cd technical-exercise
+   ```bash
+   cd technical-exercise
 3. Install Dependencies
+   ```bash
+   npm install
+
+## Running the Tests
+- For Validating all tests in English Language Pages
   ```bash
-  npm install
+  npm run report-en
+
+- For Validating all tests in French Language Pages
+  ```bash
+  npm run report-fr
+
+- For Validating all the Tests
+  ```bash
+  npm run report
