@@ -1,76 +1,80 @@
-# technical-exercise
-Repository for a technical exercise
+# Technical Exercise - Cypress Test Suite
 
-Cypress test suite that would cover Signup functionality for https://app.qa.nesto.ca/login
+This repository contains a Cypress test suite for testing the signup functionality of the [Nesto application](https://app.qa.nesto.ca/login).
 
 ## Table of Contents
 - [Overview](#overview)
 - [Test Files](#test-files)
-  - [Signup Language Tests](#signup-language-tests)
-  - [Page Load Tests](#page-load-tests)
-  - [User Signup Tests](#user-signup-tests)
-  - [Field Validation Tests](#field-validation-tests)
+  - [Field Validation Tests for French language](#field-validation-tests)
+  - [Page Load Tests for French language](#page-load-tests)
+  - [User Signup Tests for French language](#user-signup-tests)
+  - [Invalid Email Entry Validation for French Language](#field-validation-tests)
+  - [Successful User Sign up for French Language] (#User Sign up)
+  - [Field Validation Tests for English language](#signup-language-tests)
+  - [Page Load Tests for English language](#page-load-tests)
+  - [User Signup Tests for English language](#user-signup-tests)
+  - [Invalid Email Entry Validation for English Language](#field-validation-tests)
+  - [Successful User Sign up for English Language] (#User Sign up)
 - [Prerequisites](#prerequisites)
 - [Dependencies](#dependencies)
 - [Setup and Installation](#setup-and-installation)
 - [Running Tests](#running-tests)
 
 ## Overview
-This repository contains a Cypress test suite that covers the Signup functionality for https://app.qa.nesto.ca/login. The tests are designed to ensure that the signup process works correctly under various conditions and that the user interface behaves as expected.
+The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages and ensures the application's behavior meets expected conditions.
 
 ## Test Files
+### 1. **field-validation-tests**
+   - Verifies the behavior when toggling between English and French.
+   - Checks the visibility and correctness of labels based on the language.
 
-### Signup Language Tests
-File: `cypress/e2e/login/signupLanguage.cy.ts`
+### 2. **Page Load Tests**
+   - Validates that all elements load correctly when the login page is accessed.
 
-This test suite verifies the behavior of the signup page when the user selects different languages (English and French). It includes tests for:
-- Visiting the signup page
-- Accepting the pop-up
-- Toggling the language
-- Taking screenshots and logging details if a test fails
+### 3. **User Signup Tests**
+   - Tests the complete signup process with valid input data and verifies API calls.
 
-### Page Load Tests
-File: `cypress/e2e/login/pageload.cy.ts`
-
-This test suite verifies the behavior of the login page when the user navigates to the login URL. It includes tests for:
-- Visiting the login page
-- Accepting the pop-up
-- Checking the visibility of the title, fields, and login button
-- Taking screenshots if a test fails
-
-### User Signup Tests
-File: `cypress/e2e/login/userSignup.cy.ts`
-
-This test suite verifies the behavior of the signup page when the user fills in all the fields and submits the form. It includes tests for:
-- Visiting the signup page
-- Accepting the pop-up
-- Intercepting the API call for signup
-- Taking screenshots and logging details if a test fails
-
-### Field Validation Tests
-File: `cypress/e2e/login/fieldValidation.cy.ts`
-
-This test suite verifies the behavior of the signup page when the user views all the fields and clicks on submit without filling any fields. It includes tests for:
-- Visiting the signup page
-- Accepting the pop-up
-- Validating the labels
-- Taking screenshots and logging details if a test fails
+### 4. **Field Validation Tests**
+   - Ensures that form fields display appropriate validation messages when left empty or incorrectly filled.
 
 ## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- You have installed Node.js (>=14.x.x)
-- You have installed npm (>=6.x.x)
-- You have a code editor or IDE such as Visual Studio Code
+- Node.js (>= 14.x.x)
+- npm (>= 6.x.x)
+- A code editor like Visual Studio Code
 
 ## Dependencies
-This project uses the following npm packages:
-- `@types/node`: "^22.7.6"
-- `cypress`: "^13.15.0"
-- `cypress-mochawesome-reporter`: "^3.8.2"
-- `mochawesome`: "^7.1.3"
-- `ts-node`: "^10.9.2"
-- `typescript`: "^5.6.3"
-- Additional dependencies can be found in the `package.json` file
+The following npm packages are used:
+- `cypress`
+- `cypress-mochawesome-reporter`
+- `mochawesome`
+- `typescript`
+- `ts-node`
+
+Additional dependencies are listed in the `package.json` file.
 
 ## Setup and Installation
-To set up and install the necessary dependencies, run the following commands:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jarinmanuvel/technical-exercise.git
+
+2. Navigate to project directory
+   ```bash
+  cd technical-exercise
+
+3. Install Dependencies
+  ```bash
+  npm install
+
+## Run Tests
+Run the Cypress tests with the following commands:
+- For English Language Validation scripts only:
+  ```bash
+  npm run report-en
+
+- For French Language Validations scripts only:
+  ```bash
+  npm run report-fr
+
+- For running all the scripts:
+  ```bash
+  npm run report
