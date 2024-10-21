@@ -110,5 +110,7 @@ Execution report is automatically generated using Mochawesome. You can find the 
 
 You can find a sample execution report under [sample docs](./cypress/sample%20docs) folder called mochaawesomereportsample.html, to view this sample make sure to download the html file along with the [assets](./cypress/sample%20docs/assets) folder from the [sample docs](./cypress/sample%20docs) folder and open the html file in your local browser. 
 
+![Sample Mochawesome report](cypress/sample%20docs/mochawesomesample.png)
+
 ## Bugs found while testing
 [View the PDF](./cypress/sample%20docs/Bugs%20From%20Technical%20Exercise%20-%20Nesto.pdf)

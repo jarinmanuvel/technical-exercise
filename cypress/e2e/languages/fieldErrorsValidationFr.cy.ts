@@ -1,4 +1,4 @@
-describe('Given the user is in the sign up page', () => {
+describe('Given the user is in the sign up page and language is French', () => {
     context('When User Views all the fields and clicks on submit without filling any fields', () => {
         beforeEach(() => {
             // Navigate to the signup page before each test

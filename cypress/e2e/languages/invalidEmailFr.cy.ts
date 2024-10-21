@@ -52,7 +52,7 @@ describe('Given User is in the signup page', () => {
             cy.validateLabelsFr(); // Calls the validation for French labels
         });
 
-        it('should show an error message for an invalid email format', () => {
+        it('should show an error message for an invalid email format in French', () => {
             // Fill the form with invalid email
             cy.get('#firstName').type('Jean');
             cy.get('#lastName').type('Dupont'); 

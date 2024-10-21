@@ -1,5 +1,5 @@
 describe('Given User Navigates to the Login URL', () => {
-    context('When User views the Login Page', () => {
+    context('When User views the Login Page in French', () => {
       beforeEach(() => {
         cy.on('uncaught:exception', (err, runnable) => {
           return false;
@@ -34,7 +34,7 @@ describe('Given User Navigates to the Login URL', () => {
         cy.get('#form_signup_forgotPassword').should('be.visible');
       });
   
-      it('Then clicking the Forgot Password link should navigate to the Password Assistance page', () => {
+      it('Then clicking the Forgot Password link should navigate to the Password Assistance page in French', () => {
         // Click the forgot password link
         cy.get('#form_signup_forgotPassword').click();
   

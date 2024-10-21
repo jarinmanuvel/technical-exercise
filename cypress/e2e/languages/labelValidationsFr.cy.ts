@@ -1,5 +1,5 @@
-describe('Given the user is in the French sign up page', () => {
-    context('When User Views all the fields and clicks on submit without filling any fields', () => {
+describe('Given the user is in the sign up page', () => {
+    context('When User toggles the language to French', () => {
         beforeEach(() => {
             // Navigate to the login page before each test
             cy.visit('https://app.qa.nesto.ca/signup')
@@ -45,7 +45,7 @@ describe('Given the user is in the French sign up page', () => {
         })
 
         //Validates the labels
-        it('Then they should see all required labels correctly displayed', () => {
+        it('Then they should see all required labels correctly displayed in French', () => {
             cy.validateLabelsFr()
             cy.contains('Créez un compte nesto').should('be.visible')
 
