@@ -68,7 +68,29 @@ Cypress.Commands.add('validateMandatoryFieldErrors', () => {
 });
 
 Cypress.Commands.add('validateRequiredFieldMessages', () => {
-    // Check that the "Required" message appears for six of the mandatory field
+    // Check that the "Required" or "Requis" message appears for six of the mandatory field
     cy.get('[data-test-id="validation_errors_isRequired"]').should('have.length', 6)
 });
 
+Cypress.Commands.add('toggleLanguageToFrench', () => {
+    cy.get('[data-test-id="toggle-language"]').should('be.visible').click();
+    cy.get('[data-test-id="toggle-language"]').then($toggle => {
+      const toggleValue = $toggle.val(); // Get the value of the toggle button
+      if (toggleValue === 'FR') {
+        // If the toggle value is 'FR', it means the page is in English, so switch to French
+        cy.get('[data-test-id="toggle-language"]').should('be.visible').click();
+      }
+    });
+  });
+
+  Cypress.Commands.add('toggleLanguageToEnglish', () => {
+    cy.get('[data-test-id="toggle-language"]').should('be.visible').click();
+    cy.get('[data-test-id="toggle-language"]').then($toggle => {
+      const toggleValue = $toggle.val(); // Get the value of the toggle button
+      if (toggleValue === 'EN') {
+        // If the toggle value is 'EN', it means the page is in English, so switch to English
+        cy.get('[data-test-id="toggle-language"]').should('be.visible').click();
+      }
+    });
+  });
+  

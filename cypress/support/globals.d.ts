@@ -6,6 +6,8 @@ declare global {
       validateLabelsFr(): Chainable<void>
       validateMandatoryFieldErrors(): Chainable<void>
       validateRequiredFieldMessages(): Chainable<void>
+      toggleLanguageToFrench():Chainable<void>
+      toggleLanguageToEnglish():Chainable<void>
     }
   }
 }

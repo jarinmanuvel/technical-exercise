@@ -15,16 +15,7 @@ describe('Given the user is on the sign-up page in French', () => {
           cy.log('Consent button not found; proceeding without it.');
         }
       });
-
-      // Check the language toggle button to see which language is active
-      cy.get('[data-test-id="toggle-language"]').then($toggle => {
-        const toggleValue = $toggle.val(); // Get the value of the toggle button
-        if (toggleValue === 'FR') {
-          // If the toggle value is 'FR', it means the page is in English, so switch to French
-          cy.get('[data-test-id="toggle-language"]').should('be.visible').click();
-        }
-      });
-
+      cy.toggleLanguageToFrench();
       cy.on('uncaught:exception', (err, runnable) => {
         return false;
       });
