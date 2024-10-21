@@ -105,3 +105,4 @@ Execution report is generated using Mochawesome. You can find the report generat
 ## Bugs found while testing
 [View the PDF](cypress/downloads/Bugs From Technical Exercise - Nesto.pdf)
 
+
