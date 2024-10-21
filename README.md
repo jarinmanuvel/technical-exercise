@@ -38,7 +38,7 @@ I have updated `package.json` file with the commands to run the scripts, you can
    - Verifies validation messages and label visibility for the French signup page.
 
 ### Invalid Email Entry Validation for French Language
-   - Validates the error messages when an invalid email is entered in the French version.(negative scenario)
+   - Validates the error messages when an invalid email is entered in the French version. (Negative scenario)
 
 ### Label Validation Tests for French Language
    - Validates the labels in french language. 
@@ -47,7 +47,7 @@ I have updated `package.json` file with the commands to run the scripts, you can
    - Ensures that all elements load correctly when the French login page is accessed.
 
 ### Successful User Signup for French Language
-   - Tests successful signup process using French language settings. (positive scenario)
+   - Tests successful signup process when the user is in the French Sign up page. (Positive scenario)
 
 ### Field Validation Tests for English Language
    - Verifies validation messages and label visibility for the English signup page.
@@ -62,7 +62,7 @@ I have updated `package.json` file with the commands to run the scripts, you can
    - Ensures that all elements load correctly when the English login page is accessed.
 
 ### Successful User Signup for English Language
-   - Tests successful signup process using English language settings. (positive scenario)
+   - Tests successful signup process when the user is in the English Sign up page. (positive scenario)
 
 ## Prerequisites
 - Node.js (>= 14.x.x)
