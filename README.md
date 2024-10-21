@@ -82,14 +82,18 @@ Additional dependencies are listed in the `package.json` file.
    npm install
 
 ## Running the Tests
-- For Validating all tests in English Language Pages
+- For executing all tests in English Language Pages - Runs the English Tests headless 
   ```bash
   npm run report-en
 
-- For Validating all tests in French Language Pages
+- For executing all tests in French Language Pages - Runs the French Tests headless 
   ```bash
   npm run report-fr
 
-- For Validating all the Tests
+- For executing all the Tests - Runs all the Tests headless
   ```bash
   npm run report
+
+- For executing all the Tests in the Cypress App
+  ```bash
+  npm run cy:open
