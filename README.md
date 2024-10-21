@@ -5,37 +5,55 @@ This repository contains a Cypress test suite for testing the signup functionali
 ## Table of Contents
 - [Overview](#overview)
 - [Test Files](#test-files)
-  - [Field Validation Tests for French language](#field-validation-tests)
-  - [Page Load Tests for French language](#page-load-tests)
-  - [User Signup Tests for French language](#user-signup-tests)
-  - [Invalid Email Entry Validation for French Language](#field-validation-tests)
-  - [Successful User Sign up for French Language] (#User Sign up)
-  - [Field Validation Tests for English language](#signup-language-tests)
-  - [Page Load Tests for English language](#page-load-tests)
-  - [User Signup Tests for English language](#user-signup-tests)
-  - [Invalid Email Entry Validation for English Language](#field-validation-tests)
-  - [Successful User Sign up for English Language] (#User Sign up)
+  - [Field Validation Tests for French Language](#field-validation-tests-for-french-language)
+  - [Page Load Tests for French Language](#page-load-tests-for-french-language)
+  - [User Signup Tests for French Language](#user-signup-tests-for-french-language)
+  - [Invalid Email Entry Validation for French Language](#invalid-email-entry-validation-for-french-language)
+  - [Successful User Signup for French Language](#successful-user-signup-for-french-language)
+  - [Field Validation Tests for English Language](#field-validation-tests-for-english-language)
+  - [Page Load Tests for English Language](#page-load-tests-for-english-language)
+  - [User Signup Tests for English Language](#user-signup-tests-for-english-language)
+  - [Invalid Email Entry Validation for English Language](#invalid-email-entry-validation-for-english-language)
+  - [Successful User Signup for English Language](#successful-user-signup-for-english-language)
 - [Prerequisites](#prerequisites)
 - [Dependencies](#dependencies)
 - [Setup and Installation](#setup-and-installation)
 - [Running Tests](#running-tests)
 
 ## Overview
-The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages and ensures the application's behavior meets expected conditions.
+The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages to ensure the application's behavior meets expected conditions.
 
 ## Test Files
-### 1. **field-validation-tests**
-   - Verifies the behavior when toggling between English and French.
-   - Checks the visibility and correctness of labels based on the language.
 
-### 2. **Page Load Tests**
-   - Validates that all elements load correctly when the login page is accessed.
+### Field Validation Tests for French Language
+   - Verifies validation messages and label visibility for the French signup page.
 
-### 3. **User Signup Tests**
-   - Tests the complete signup process with valid input data and verifies API calls.
+### Page Load Tests for French Language
+   - Ensures that all elements load correctly when the French login page is accessed.
 
-### 4. **Field Validation Tests**
-   - Ensures that form fields display appropriate validation messages when left empty or incorrectly filled.
+### User Signup Tests for French Language
+   - Tests the complete signup process with valid input data for French.
+
+### Invalid Email Entry Validation for French Language
+   - Validates the error messages when an invalid email is entered in the French version.
+
+### Successful User Signup for French Language
+   - Tests successful signup scenarios using French language settings.
+
+### Field Validation Tests for English Language
+   - Verifies validation messages and label visibility for the English signup page.
+
+### Page Load Tests for English Language
+   - Ensures that all elements load correctly when the English login page is accessed.
+
+### User Signup Tests for English Language
+   - Tests the complete signup process with valid input data for English.
+
+### Invalid Email Entry Validation for English Language
+   - Validates the error messages when an invalid email is entered in the English version.
+
+### Successful User Signup for English Language
+   - Tests successful signup scenarios using English language settings.
 
 ## Prerequisites
 - Node.js (>= 14.x.x)
@@ -56,25 +74,9 @@ Additional dependencies are listed in the `package.json` file.
 1. Clone the repository:
    ```bash
    git clone https://github.com/jarinmanuvel/technical-exercise.git
-
-2. Navigate to project directory
-   ```bash
+2. Navigate to the project directory
+  ```bash
   cd technical-exercise
-
 3. Install Dependencies
   ```bash
   npm install
-
-## Run Tests
-Run the Cypress tests with the following commands:
-- For English Language Validation scripts only:
-  ```bash
-  npm run report-en
-
-- For French Language Validations scripts only:
-  ```bash
-  npm run report-fr
-
-- For running all the scripts:
-  ```bash
-  npm run report
