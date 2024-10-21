@@ -87,19 +87,19 @@ Additional dependencies are listed in the `package.json` file.
   ```bash
   npm run report-en
 
-- ![Sample execution of English language tests](cypress/sample docs/allenglishlanguagepassed.png)
+![Sample execution of English language tests](cypress/sample%20docs/allenglishlanguagepassed.png)
 
 - For executing all tests in French Language Pages - Runs the French Tests headless 
   ```bash
   npm run report-fr
 
-- ![Sample execution of French language tests](cypress/sample docs/allfrenchlanguagepassed.png)
+![Sample execution of French language tests](cypress/sample%20docs/allfrenchlanguagepassed.png)
 
 - For executing all the Tests - Runs all the Tests headless
   ```bash
   npm run report
 
-- ![Sample execution of All tests](cypress/sample docs/alltestspassed.png)
+![Sample execution of All tests](cypress/sample%20docs/alltestspassed.png)
 
 - For executing all the Tests in the Cypress App
   ```bash
