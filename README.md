@@ -1,6 +1,6 @@
 # Technical Exercise - Cypress Test Suite
 
-This repository contains a Cypress test suite for testing the signup functionality of the [Nesto application](https://app.qa.nesto.ca/login).
+This repository contains a Cypress test suite for testing the signup functionality of the [Nesto application](https://app.qa.nesto.ca/login). The project is using cypress framework and the tests are written in typescript
 
 ## Table of Contents
 - [Overview](#overview)
@@ -18,11 +18,19 @@ This repository contains a Cypress test suite for testing the signup functionali
 - [Prerequisites](#prerequisites)
 - [Dependencies](#dependencies)
 - [Setup and Installation](#setup-and-installation)
-- [Running Tests](#running-tests)
+- [Running The Tests](#running-the-tests)
 - [Viewing the Execution Report](viewing-execution-report)
 
 ## Overview
 The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages to ensure the application's behavior meets expected conditions.
+
+The project is using cypress framework and the tests are written in typescript. All the test files can be found under [e2e](.cypress/e2e) folder. 
+[languages](.cypress/e2e/languages) folder under e2e contains all the tests that validates when the language of the website is toggled to French
+[login](.cypress/e2e/login) folder under e2e contains all the tests that validates when the language of the website is English
+
+I have used several resuable functions in that is used in the tests for both languages and it can be found in the `commands.ts` file under the folder [support](.cypress/support)
+
+I have updated `package.json` file with the commands to run the scripts, you can also find those instructions below at [Running The Tests](#running-the-tests)
 
 ## Test Files
 
@@ -87,18 +95,21 @@ Additional dependencies are listed in the `package.json` file.
   ```bash
   npm run report-en
 
+Sample execution of English language tests
 ![Sample execution of English language tests](cypress/sample%20docs/allenglishlanguagepassed.png)
 
 - For executing all tests in French Language Pages - Runs the French Tests headless 
   ```bash
   npm run report-fr
 
+Sample execution of French language tests
 ![Sample execution of French language tests](cypress/sample%20docs/allfrenchlanguagepassed.png)
 
 - For executing all the Tests - Runs all the Tests headless
   ```bash
   npm run report
 
+Sample execution of all the tests
 ![Sample execution of All tests](cypress/sample%20docs/alltestspassed.png)
 
 - For executing all the Tests in the Cypress App
@@ -109,6 +120,8 @@ Additional dependencies are listed in the `package.json` file.
 Execution report is automatically generated using Mochawesome. You can find the report generated in the "/cypress/reports" directory after executing them headless. 
 
 You can find a sample execution report under [sample docs](./cypress/sample%20docs) folder called mochaawesomereportsample.html, to view this sample make sure to download the html file along with the [assets](./cypress/sample%20docs/assets) folder from the [sample docs](./cypress/sample%20docs) folder and open the html file in your local browser. 
+
+Sample Machawesome Report
 
 ![Sample Mochawesome report](cypress/sample%20docs/mochawesomesample.png)
 
