@@ -101,6 +101,7 @@ Additional dependencies are listed in the `package.json` file.
 
 ## Viewing the Execution Report
 Execution report is generated using Mochawesome. You can find the report generated in the "cypress/reports" directory after executing them headless
+Sample Report: [View the Report](cypress/reports/index.html)
 
 ## Bugs found while testing
 [View the PDF](./cypress/downloads/Bugs%20From%20Technical%20Exercise%20-%20Nesto.pdf)
