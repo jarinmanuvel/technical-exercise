@@ -9,8 +9,9 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "test": "npx cypress run --browser chrome --spec cypress/e2e/**/*.cy.ts",
-    "report": "npx cypress run --reporter cypress-mochawesome-reporter"
+    "report": "npx cypress run --reporter cypress-mochawesome-reporter",
+    "report-en": "npx cypress run --reporter cypress-mochawesome-reporter --spec 'cypress/e2e/languages/*'",
+    "report-fr": "npx cypress run --reporter cypress-mochawesome-reporter --spec 'cypress/e2e/languages/*'"
   },
   "name": "technical-exercise",
   "version": "1.0.0",
