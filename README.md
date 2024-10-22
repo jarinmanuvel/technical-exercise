@@ -19,8 +19,8 @@ This repository contains a test suite for testing the signup functionality of th
 - [Dependencies](#dependencies)
 - [Setup and Installation](#setup-and-installation)
 - [Running The Tests](#running-the-tests)
-- [Viewing the Execution Report](viewing-the-execution-report)
-- [Bugs Found While Testing](bugs-found-while-testing)
+- [Viewing the Execution Report](#viewing-the-execution-report)
+- [Bugs Found While Testing](#bugs-found-while-testing)
 
 ## Overview
 The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages to ensure the application's behavior meets expected conditions.
