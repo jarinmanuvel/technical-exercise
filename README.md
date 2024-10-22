@@ -25,10 +25,10 @@ This repository contains a test suite for testing the signup functionality of th
 ## Overview
 The test suite validates different aspects of the signup process, including language selection, page load checks, form validation, and user signup scenarios. It supports both English and French languages to ensure the application's behavior meets expected conditions.
 
-The project is using cypress framework and the tests are written in typescript. All the test files can be found under [e2e](.cypress/e2e) folder, [languages](.cypress/e2e/languages) folder under e2e contains all the tests that validates when the language of the website is toggled to French
-[login](.cypress/e2e/login) folder under e2e contains all the tests that validates when the language of the website is English
+The project is using cypress framework and the tests are written in typescript. All the test files can be found under [e2e](./cypress/e2e) folder, [languages](./cypress/e2e/languages) folder under e2e contains all the tests that validates when the language of the website is toggled to French
+[login](./cypress/e2e/login) folder under e2e contains all the tests that validates when the language of the website is English
 
-I have used several resuable functions in that is used in the tests for both languages and it can be found in the `commands.ts` file under the folder [support](.cypress/support)
+I have used several resuable functions in that is used in the tests for both languages and it can be found in the `commands.ts` file under the folder [support](./cypress/support)
 
 I have updated `package.json` file with the commands to run the scripts, you can also find those instructions below at [Running The Tests](#running-the-tests)
 
